@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="pos.ClienteController" style="-fx-background-color:white;">
+    <top>
+        <Label text="Elegir Cliente" style="-fx-font-size:18; -fx-font-weight:bold; -fx-padding:10;"/>
+    </top>
+    <center>
+        <TableView fx:id="tblClientes">
+            <columns>
+                <TableColumn text="Documento" prefWidth="150"/>
+                <TableColumn text="Nombre" prefWidth="350"/>
+            </columns>
+        </TableView>
+    </center>
+    <bottom>
+        <HBox spacing="10" style="-fx-padding:10;" alignment="CENTER_RIGHT">
+            <Button text="Volver" onAction="#onVolver"/>
+            <Button text="Seleccionar" onAction="#onSeleccionar" style="-fx-background-color:#33cc88; -fx-text-fill:white;"/>
+        </HBox>
+    </bottom>
+</BorderPane>
