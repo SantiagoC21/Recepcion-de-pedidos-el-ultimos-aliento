@@ -13,25 +13,28 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.release>21</maven.compiler.release>
-        <javafx.version>21.0.5</javafx.version>
+        <javafx.version>21.0.6</javafx.version> <!-- JDK 21 + JavaFX 21 LTS -->
     </properties>
 
     <dependencies>
+        <!-- IMPORTANTe: classifier para Windows -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
             <version>${javafx.version}</version>
+            <classifier>win</classifier>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
             <version>${javafx.version}</version>
+            <classifier>win</classifier>
         </dependency>
     </dependencies>
 
     <build>
         <plugins>
-            <!-- Compilación en Java 21 -->
+            <!-- Compilación Java 21 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -41,7 +44,7 @@
                 </configuration>
             </plugin>
 
-            <!-- Ejecutar con: mvn javafx:run -->
+            <!-- Ejecutar con: mvn clean javafx:run -->
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
